@@ -1,0 +1,478 @@
+Initial Styling
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* sidebar section */
+#sidebar{
+    position: relative;
+    transition: all 0.3s ease;
+}
+#sidebar button{
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+#sidebar button span{
+    background-color: transparent;
+    vertical-align: middle;
+    font-size: 30px;
+}
+#sidebar .navbar button{
+    padding : 2px;
+}
+#sidebar .navbar button span{
+    font-size: 26px;
+}
+#sidebar button:hover{
+    background-color: rgb(230, 230, 230);
+}
+.navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 100vh;
+    font-size: 19px;
+    border-right: 2px solid rgba(0, 0, 0, 0.08);
+}
+.navbar div{
+    padding: 20px 0 20px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+.navbar div a{
+    font-size: 30px;
+    color: black;
+}
+.navbar img{
+    width: 70px;
+    height: 60px;
+}
+.navbar > a:last-child{
+    margin-top: auto;
+    color: black;
+    font-weight: 300;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+.navbar > a:last-child:hover{
+    font-weight: 500;
+}
+.navbar li{
+    width: fit-content;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-weight: 300;
+    padding: 10px 10px;
+    transition: all 0.3s ease;
+}
+.navbar li:hover{
+    background-color: black;
+}
+.navbar li:hover a{
+    color: white;
+}
+.navbar a{
+    display: flex;
+    align-items: center;
+    color: black;
+    justify-content: center;
+}
+.navbar li a span{
+    margin-right: 5px;
+}
+.navbar.appear{
+    position: fixed;
+    animation: appear 0.5s ease-in-out;
+    z-index: 1;
+    display: unset;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.418);
+}
+@keyframes appear{
+    0% {margin-left: -250px;}
+    100% {margin-left: 0;}
+}
+.navbar.disappear{
+    animation: disappear 0.5s ease-in-out;
+}
+@keyframes disappear{
+    0% {margin-left: 0;}
+    100% {margin-left: -250px;}
+}
+
+/* header section */
+header{
+    padding: 25px 40px;
+    margin-left: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1{
+    font-size: 28px;
+}
+header .partA div{
+    font-weight: 300;
+}
+header .partB{
+    display: flex;
+    align-items: center;
+}
+header .partB .icon{
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+header .partB .icon:hover{
+    background-color: rgba(0, 0, 0, 0.078);
+}
+header .partB img{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+header .partB span:not(.icon){
+    font-weight: 500;
+}
+header .partB .user{
+    margin: 0 5px 0 7px;
+}
+header .partB div{
+    display: flex;
+    align-items: center;
+}
+header .partB div::after {
+    content: "";
+    height: 35px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.217);  
+    display: inline-block; 
+    margin: 0 30px;
+}
+header .partB> span:last-child{
+    cursor: pointer;
+    font-size: 30px;
+}
+header .partB> span:last-child:hover{
+    color: #00000093;
+}
+
+/* stats section */
+#dashboard {
+    margin-left: 250px;
+    display: flex;
+}
+#dashboard .stats{
+    width: 70%;
+    padding: 10px 35px;
+}
+#dashboard .charts{
+    width: 30%;
+    padding: 10px 35px;
+}
+
+/* stat 1 */
+.stats .stat1{
+    display: flex;
+}
+.stats .stat1 > div{
+    flex-grow: 1;
+    height: 160px;
+    position: relative;
+    margin: 0 10px;
+    border-radius: 16px;
+}
+.stats .stat1 > div:first-child{
+    background-color: #E6F5F9;
+    transition: all 0.3 ease;
+}
+.stats .stat1 > div:first-child:hover{
+    background-color: #b5ebf9;
+}
+.stats .stat1 > div:last-child{
+    background-color: #EFF6FC;
+    transition: all 0.3 ease;
+}
+.stats .stat1 > div:last-child:hover{
+    background-color: #c4e3ff;
+}
+.stats .stat1 > div:nth-child(2){
+    background-color: #EFFCEF;
+    transition: all 0.3 ease;
+}
+.stats .stat1 > div:nth-child(2):hover{
+    background-color: #c9ffc9;
+}
+.stats .stat1 img{
+    position: absolute;
+    width: 100px; 
+    height: 80px;
+    bottom: 0;
+    right: 0;
+}
+.stats .stat1 p{
+    margin: 0;
+}
+.stats .stat1 p:nth-child(even){
+    font-weight: 300;
+    font-size: 14px;
+}
+.stats .stat1 p:nth-child(3){
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* stat 2 */
+.stats .stat2{
+    height: 450px;
+    width: 100%;
+}
+
+/* stat 3 */
+.stats .stat3 img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.stats .stat3 table{
+    text-align: center;
+    vertical-align: middle;
+}
+.stats .stat3 th{
+    font-weight: 400;
+}
+tr{
+    cursor: pointer;
+}
+tbody .title:hover{
+    color: blue;
+}
+#dashboard h4{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Chart 1 */
+.charts .chart1 > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.08);
+    padding-top: 10px;
+}
+.charts .chart1 > div span:first-child{
+    font-size: 26px;
+    font-weight: 500;
+}
+.charts .chart1 > div span:last-child{
+    font-weight: 300;
+    font-size: 15px;
+}
+.charts .chart1 table{
+    vertical-align: middle;
+    margin-top: 10px;
+}
+.charts .chart1 table th{
+    font-weight: 400;
+}
+.charts .chart1 table th img{
+    margin-right: 10px;  
+    width: 30px;
+    height: 30px;
+}
+.charts .chart1 td{
+    text-align: end;
+}
+
+/* Chart 2 & 3 */
+.charts .chart2 > div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+.charts .chart2 > div span{
+    font-weight: 300;
+    cursor: pointer;
+}
+.charts .chart2 > div span:hover{
+    font-weight: 500;
+}
+.charts .chart2 img{
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.charts .chart2 td{
+    text-align: end;
+}
+.charts .chart2 th{
+    font-weight: 400;
+}
+
+/* Media Queries */
+@media (max-width:1430px){
+    #dashboard .stats{
+        width: 60%;
+        padding: 10px 25px;
+    }
+    #dashboard .charts{
+        width: 40%;
+        padding: 10px 25px;
+    }
+}
+@media (min-width:1270px){
+    .navbar .navbar-list{
+        padding: 0;
+    }
+}
+@media (max-width:1270px){
+    .navbar > a:last-child{
+        position: absolute;
+        bottom: 0;
+    }
+    #dashboard{
+        margin-left: 0;
+    }
+    header{
+        margin-left: 60px;
+    }
+    .navbar{
+        display: none;
+    }
+    #sidebar button{
+        display: unset;
+        left: 30px;
+        top: 30px
+    }
+    #sidebar .navbar button{
+        left: 205px;
+        top: 34px;
+    }
+    .navbar div{
+        display: flex;
+    }
+    .navbar div a{
+        align-self: flex-start;
+        margin-left: 25px;
+    }
+    #dashboard .stats{
+        width: 70%;
+    }
+    #dashboard .charts{
+        width: 30%;
+    }
+}
+@media (max-width:1100px){
+    #dashboard .stats{
+        width: 70%;
+        padding: 10px 5px 10px 15px;
+    }
+    #dashboard .charts{
+        width: 30%;
+        padding: 10px 15px 10px 5px;
+    }
+}
+@media (max-width:1000px){
+    #dashboard{
+        flex-direction: column;
+    }
+    #dashboard .stats{
+        width: 100%;
+        padding: 10px 35px;
+    }
+    #dashboard .charts{
+        width: 100%;
+        padding: 10px 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    #dashboard .charts> div{
+        margin: 0 10px;
+    }
+    .charts .chart1{
+        width: 100%;
+    }
+    .charts .chart2{
+        width: 45%;
+    }
+    .charts .chart1 td:nth-child(2){
+        text-align: left;
+    }
+}
+@media (max-width:700px){
+    .charts .chart2{
+        width: 100%;
+    }
+}
+@media (max-width:640px){
+    header .partB{
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    header .partB div{
+        width: 100%;
+        justify-content: flex-end;
+    }
+    header .partB div::after {
+        display: none;
+    }
+    header .partB .user{
+        width: 60px;
+    }
+    #dashboard .stats{
+        padding: 10px 5px;
+    }
+    #dashboard .charts{
+        padding: 10px 5px;
+    }
+    .stats .stat1 img{
+        height: 50px;
+        width: 70px;
+    }
+    .stats .stat1 h2{
+        font-size: 20px;
+    }
+    .stats .stat1 p:nth-child(3){
+        font-size: 14px;
+    }
+    .stats .stat3{
+        font-size: 12px;
+    }
+    header{
+        padding: 25px 30px;
+    }
+}

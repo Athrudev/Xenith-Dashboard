@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xenith</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://asset.brandfetch.io/idWDyAHcZo/idv8S_AfEP.png">
+
+    <!-- Setting google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Setting google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+
+    <!-- Plotly Script -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
+
+    <!-- Custom Script -->
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <section id="sidebar">
+        <button><span class="material-symbols-outlined">menu</span></button>
+        <nav class="navbar">
+            <button><span class="material-symbols-outlined">navigate_before</span></button>
+            <div>
+                <a href="#"><img src="https://asset.brandfetch.io/idWDyAHcZo/idv8S_AfEP.png" alt="Xenith logo">Xenith</a>
+            </div>
+            <ul class="navbar-list">
+                <li>
+                    <a href="#"><span class="material-symbols-outlined">home</span>Home</a>
+                </li>
+                <li>
+                    <a href="#"><span class="material-symbols-outlined">leaderboard</span>Analytics</a>
+                </li>
+                <li>  
+                    <a href="#"><span class="material-symbols-outlined">grid_view</span>Explore</a>
+                </li>
+                <li>
+                    <a href="#"><span class="material-symbols-outlined">shopping_bag</span>Shop</a>
+                </li>
+                <li>
+                    <a href="#"><span class="material-symbols-outlined">forum</span>Chat</a>
+                </li>
+                <li>
+                    <a href="#"><span class="material-symbols-outlined">settings</span>Settings</a>
+                </li>
+                <li>
+                    <a href="#"><span class="material-symbols-outlined">help</span>Help</a>
+                </li>
+                <li>
+                    <a href="#"><span class="material-symbols-outlined">group</span>Manage User</a>
+                </li>
+            </ul>
+            <a href="#"><span class="material-symbols-outlined">logout</span>Log Out</a>
+        </nav>
+    </section>
+
+    <header>
+        <div class="partA">
+            <h1>Welcome Back, Amit!</h1>
+            <span>Here's what happening with your store today</span>
+        </div>
+        <div class="partB">
+            <div>
+                <span class="material-symbols-outlined icon">search</span>
+                <span class="material-symbols-outlined icon">notifications</span>
+            </div>
+            <img src="./assets/images/avatar.jpg" alt="profile image">
+            <span class="user">Amit Kulkarni</span>
+            <span class="material-symbols-outlined">expand_more</span>
+        </div>
+    </header>
+    
+    <section id="dashboard">
+        <div class="stats">
+            <div class="stat1">
+                <div class="card">
+                    <img class="card-img" src="./assets/images/upLine.png" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h2 class="card-title">307.48K</h2>
+                        <p class="card-text">Total Customer</p>
+                        <p class="card-text">+30%</p>
+                        <p class="card-text">This month</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./assets/images/downLine.png" alt="Card image">
+                    <div class="card-img-overlay">
+                      <h2 class="card-title">$30.58K</h2>
+                      <p class="card-text">Total Revenue</p>
+                      <p class="card-text">-15%</p>
+                      <p class="card-text">This month</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./assets/images/upLine.png" alt="Card image">
+                    <div class="card-img-overlay">
+                      <h2 class="card-title">2.48K</h2>
+                      <p class="card-text">Total Deals</p>
+                      <p class="card-text">+23%</p>
+                      <p class="card-text">This month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="stat2" id="myPlot"></div>
+            <div class="stat3">
+                <h4>Top Selling Products</h4>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Total Sales</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><img src="./assets/images/Denim.jpg" alt="Denim Jacket"></th>
+                        <td class="title">Denim Jacket</td>
+                        <td>Men's Tops</td>
+                        <td>In Stock</td>
+                        <td>1.43K</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><img src="./assets/images/nike.jpg" alt="Nike Air Max 97"></th>
+                        <td class="title">Nike Air Max 97</td>
+                        <td>Men's Shoes</td>
+                        <td>Out of Stock</td>
+                        <td>2.68k</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><img src="./assets/images/Jordan.jpg" alt="Jordan Air"></th>
+                        <td class="title">Jordan Air</td>
+                        <td>Men's T-Shirt</td>
+                        <td>In Stock</td>
+                        <td>1.43K</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="charts">
+            <div class="chart1">
+                <h4>Top Countries by Sell</h4>
+                <div>
+                    <span>34.48K</span>
+                    <span>Since last week</span>
+                </div>
+                <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/india.png" alt="India">India</th>
+                        <td><img src="./assets/images/increase.png" alt="Increase"></td>
+                        <td>7.12K</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/australia.png" alt="Australia">Australia</th>
+                        <td><img src="./assets/images/decrease.png" alt="Decrease"></td>
+                        <td>4.15K</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/costa-rica.png" alt="Costa Rica">Costa Rica</th>
+                        <td><img src="./assets/images/increase.png" alt="Increase"></td>
+                        <td>6.45K</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/russia.png" alt="Russia">Russia</th>
+                        <td><img src="./assets/images/decrease.png" alt="Decrease"></td>
+                        <td>3.85K</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/srilanka.png" alt="Srilanka">Srilanka</th>
+                        <td><img src="./assets/images/increase.png" alt="Increase"></td>
+                        <td>6.98K</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="chart2">
+                <div>
+                    <h4>Top Customers</h4>
+                    <span>See all</span>
+                </div>
+                <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/boy.png" alt="Robert Lewis">Robert Lewis</th>
+                        <td>$7.12K</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/girl.png" alt="Jane Foster">Jane Foster</th>
+                        <td>$4.15K</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/man.png" alt="Tom Barreett">Tom Barreett</th>
+                        <td>$6.45K</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/woman.png" alt="Mary Johns">Mary Johns</th>
+                        <td>$3.85K</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="chart2">
+                <div>
+                    <h4>Recent Orders</h4>
+                    <span>See all</span>
+                </div>
+                <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/nike-air.png" alt="Nike Air Force 1">Nike Air Force 1</th>
+                        <td>$110.96</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/dri-fit.png" alt="Men's Dri-FIT 7">Men's Dri-FIT 7</th>
+                        <td>$38.97</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/Denim.jpg" alt="Denim Jacket">Denim Jacket</th>
+                        <td>$35.50</td>
+                      </tr>
+                      <tr>
+                        <th class="title" scope="row"><img src="./assets/images/jordan-fit.png" alt="JordanDri-FIT Sport">JordanDri-FIT Sport</th>
+                        <td>$35.50</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
